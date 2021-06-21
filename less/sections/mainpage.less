@@ -19,7 +19,7 @@
     height: 100vh!important;
 
     &__item {
-       
+        overflow-y: auto;
         position: relative;
 
         &-name {
@@ -172,6 +172,10 @@
         
 
         .slider {
+
+            &__wrapper {
+                margin-bottom: 0!important;
+            }
             &__item {
                 height: 100vh!important;
                 background-size: cover;
@@ -233,6 +237,56 @@
                 }
             }
 
+            .slick-dots {
+                display: block;
+                position: absolute;
+                bottom: 22vh;
+                left: 0;
+                right: 0;
+                width: 100%;
+                max-width: 1680px;
+                margin: 0 auto;
+                padding: 0 15px 0 82px;
+                list-style: none;
+                text-align: left;
+                z-index: 11;
+
+                li {
+                    font-size: 15px;
+                    font-family: @manrope;
+                    font-weight: 700;
+                    width: 38px;
+                    height: 38px;
+                    line-height: 38px;
+                    background: none;
+                    opacity: 1;
+                    margin: 0 13px;
+                    position: relative;
+                    transition: 0.3s;
+                    border: 1px solid rgba(255,255,255,0);
+                    border-radius: 100px;
+                    text-align: center;
+                    
+                    &:not(:last-of-type) {
+                        &:after {
+                            content: '.';
+                            position: absolute;
+                            font-size: 15px;
+                            font-family: @manrope;
+                            font-weight: 700;
+                            width: 6px;
+                            left: calc(100% + 10px);
+                        }
+                    }
+                    
+
+                    &.slick-active {
+                        border: 1px solid rgba(255,255,255,0.2);
+                    }
+                }
+                
+            }
+
             &__pag {
                 position: absolute;
                 left: 0;
@@ -249,62 +303,60 @@
                     position: relative;
                 }
 
-                .swiper-button-prev {
-                    &:after {
+                .button-prev {
+                    width: 26px;
+                    height: 38px;
+                    left: 100px;
+                    z-index: 10;
+                    position: absolute;  
+                    left: 0;      
+                    top: 0;       
+                    cursor: pointer;     
+                    z-index: 12;
+
+                    &:before {
                         content: '';
+                        font-family: none;
+                        opacity: 1;
                         background-image: url('../img/icons/arrow-long.png');
                         width: 26px;
                         height: 9px;
                         transform: rotate(180deg);
-                    }
+                        display: block;
+                        position: absolute;
+                        top: 0;
+                        bottom: 0;
+                        margin: auto;
+                    }   
                 }
 
-                .swiper-button-next {
-                    &:after {
+                .button-next {
+                    width: 26px;
+                    height: 38px;
+                    right: 100px;
+                    z-index: 10;
+                    position: absolute;
+                    right: 0;
+                    top: 0;     
+                    cursor: pointer;         
+                    z-index: 12;       
+    
+                    &:before {
                         content: '';
+                        font-family: none;
+                        opacity: 1;
                         background-image: url('../img/icons/arrow-long.png');
                         width: 26px;
                         height: 9px;
+                        position: absolute;
+                        display: block;
+                        top: 0;
+                        bottom: 0;
+                        margin: auto;
                     }
                 }
 
-                .swiper-pagination {
-                    left: 0;
-                    right: 0;
-                    pointer-events: none;
-
-                    &-bullet {
-                        font-size: 15px;
-                        font-family: @manrope;
-                        font-weight: 700;
-                        width: 38px;
-                        height: 38px;
-                        line-height: 38px;
-                        background: none;
-                        opacity: 1;
-                        margin: 0 13px;
-                        position: relative;
-                        transition: 0.3s;
-                        border: 1px solid rgba(255,255,255,0);
-                        
-                        &:not(:last-of-type) {
-                            &:after {
-                                content: '.';
-                                position: absolute;
-                                font-size: 15px;
-                                font-family: @manrope;
-                                font-weight: 700;
-                                width: 6px;
-                                left: calc(100% + 10px);
-                            }
-                        }
-                        
-
-                        &-active {
-                            border: 1px solid rgba(255,255,255,0.2);
-                        }
-                    }
-                }
+            
 
             }
         }
