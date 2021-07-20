@@ -1,0 +1,48 @@
+.licenses {
+    color: @darkText;
+    margin-top: 35px;
+    padding-bottom: 105px;
+    &__wrap {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__item {
+        width: calc(100% / 4);
+        border: 1px solid #e1e3e9;
+        border-left: none;
+        padding: 40px;
+
+        &:nth-of-type(4n + 1),
+        &:first-of-type {
+            border-left: 1px solid #e1e3e9;
+        }
+    }
+
+    &__img {
+        height: 250px;
+        width: 176px;
+        margin-bottom: 28px;
+        box-shadow: 0 10px 20px 0 rgba(154, 97, 165, 0.15);
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__name {
+        font-family: @manrope;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 1.5;
+        margin-bottom: 14px;
+    }
+
+    &__text {
+        font-size: 13px;
+        font-family: @manrope;
+        line-height: 1.5;
+    }
+}
