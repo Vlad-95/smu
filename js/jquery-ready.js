@@ -90,3 +90,24 @@ if ($('.about .wysiwyg').length) {
     //$('.about .wysiwyg').
 }
 
+
+if($('.services').length) {
+    //простановка нумерации
+    $('.services__item').each(function(index) {
+        let itemNumber = index + 1;
+        console.log(itemNumber);
+        if(itemNumber < 10) {
+            $(this).find('.count').text("0" + itemNumber);
+        } else {
+            $(this).find('.count').text(itemNumber);
+        }
+        
+    })
+
+    // аккордион услуг
+    $('.services__toggle').click(function() {
+        $(this).toggleClass('active');
+        $(this).next().slideToggle();
+    })
+}
+
