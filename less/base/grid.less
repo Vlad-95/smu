@@ -20,6 +20,10 @@ body {
       transition: 0.3s;
     }    
   }
+
+  &:not(.mainpage) {
+    background-color: @gray;
+  }
 }
 
 @-ms-viewport {
@@ -237,8 +241,12 @@ body {
   margin-left: auto;
   padding-left: 15px;
   padding-right: 15px;
-  max-width: 1680px;
+  max-width: 1200px;
   width: 100%;
+
+  &_mainpage {
+    max-width: 1680px;
+  }
 }
 
 // @media (min-width: 576px) {
