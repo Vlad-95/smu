@@ -117,3 +117,134 @@
         object-fit: cover;
     }
 }
+
+.object-detail {
+   
+    &__img {
+        position: relative;
+        height: 599px;
+
+        &:after {
+            content: '';
+            background: linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.50196) 100%);
+            width: 100%;
+            height: 120px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            pointer-events: none;
+        }
+        
+          
+        img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        .wrapper {
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            margin: 0 auto;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__title {
+        position: absolute;
+        left: 15px;
+        bottom: 52px;
+        font-family: @manrope;
+        font-weight: 600;
+        font-size: 70px;
+        color: @darkText;
+
+        span {  
+            background-color: rgba(255, 255, 255, 0.8);
+            position: relative;
+            line-height: 1.45;
+            padding: 0 3px;
+        }
+    }
+
+    .parameters {
+        color: @darkText;
+        padding: 60px 0;
+        background-color: @white;
+
+        &__wrap {
+            display: flex;
+            align-items: flex-start;
+        }
+
+        &__map {
+            box-shadow: 0px 0px 20px 0px rgba(154, 96, 164, 0.2);
+            width: 40%;
+            height: 470px;
+            border: 10px solid @white;
+
+            .ymaps-2-1-78-ground-pane {
+                filter: grayscale(1);
+            }
+        }
+
+        &__list {
+            width: 60%;
+            font-family: @manrope;
+            padding-left: 84px;
+
+            &-item {
+                font-size: 15px;
+                display: flex;
+                padding: 20px 0;
+
+                &:not(:first-of-type) {
+                    border-top: 1px solid #dadce2;
+                }
+
+                .label {
+                    font-weight: 700;
+                    min-width: 300px;
+                    line-height: 1.3;
+                }
+
+                .value {
+                    font-weight: 400;
+                    line-height: 1.3;
+                }
+            }
+        }
+    }
+
+    .about {
+        background-color: @gray;
+        color: @darkText;
+        padding: 59px 0 70px;
+
+        &__title {
+            font-family: @ibm;
+            font-weight: 500;
+            margin: 0 0 30px;
+            font-size: 40px;
+        }
+
+        .wysiwyg {
+            padding: 0;
+            max-width: 970px;
+
+            ul,
+            ol,
+            p {
+                line-height: 1.8;
+            }
+        }
+    }
+
+    &__pag {
+        background-color: @white;
+    }
+}

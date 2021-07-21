@@ -177,45 +177,33 @@ $(document).ready(function() {
                 imageBlock.find('img').fadeIn();
             }
 
-
             timeout = setTimeout(show, wait)
             
         }, function() {
             clearTimeout(timeout);
         })
-        
+    }
 
+    //Объекты детальная
+    if($('.object-detail').length) {
+        ymaps.ready(init);
+        function init(){
+            // Создание карты.
+            var myMap = new ymaps.Map("map", {
+                center: [59.971668064132984,30.490338999999977],
+                controls: [],                
+                zoom: 16
+            });
 
+            var myPlacemark = new ymaps.Placemark([59.971668064132984,30.490338999999977], {}, {
+                iconLayout: 'default#image',
+                iconImageHref: 'img/icons/pin.png',
+                iconImageSize: [55, 56],
+                iconImageOffset: [-28, -45]
+            });
 
-
-        
-
-        // $('.company-designers__collections__link').hover(function() {
-        //     clearTimeout(timeout);
-        //     let self = $(this);
-
-        //     self.siblings().addClass('disabled');
-        //     let srcImage = self.attr('data-image');
-        //     let imageBlock = self.siblings('.company-designers__collections__img');
-            
-
-        //     let show = function() {
-                
-        //         imageBlock.fadeIn();
-        //         imageBlock.find('img').attr('src', srcImage);
-        //     }
-
-
-        //     timeout = setTimeout(show, wait)
-
-        // },
-        // function() {
-        //     clearTimeout(timeout);
-        //     $(this).siblings().removeClass('disabled');
-        //     let imageBlock = $(this).siblings('.company-designers__collections__img');
-        //     imageBlock.find('img').attr('src', '');
-        //     imageBlock.fadeOut();
-        // });
+            myMap.geoObjects.add(myPlacemark);
+        }
     }
 
 });

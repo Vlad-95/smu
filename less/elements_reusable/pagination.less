@@ -1,0 +1,67 @@
+.pagintaion {
+    display: flex;
+    justify-content: space-between;
+    padding: 69px 0;
+    position: relative;
+
+    &__item {
+        font-family: @manrope;
+        font-size: 13px;
+        font-weight: 700;
+        color: @darkText;
+
+        &.prev {
+            position: relative;
+            padding-left: 43px;
+
+            &:before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                bottom: 5px;
+                margin: auto;
+                background-image: url("../img/icons/arrow-long-violet.png");
+                background-size: cover;
+                width: 26px;
+                height: 8px;
+                transform: rotate(180deg);
+
+            }
+        }
+
+        &.next {
+            position: relative;
+            padding-right: 43px;
+
+            &:before {
+                content: '';
+                position: absolute;
+                right: 0;
+                top: 0;
+                bottom: 5px;
+                margin: auto;
+                background-image: url("../img/icons/arrow-long-violet.png");
+                background-size: cover;
+                width: 26px;
+                height: 8px;
+            }
+        }
+
+        &.back {
+            border: 1px solid @violet;
+            border-radius: 100px;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 130px;
+            margin: auto;
+            text-align: center;
+            padding: 13px 0 12px;
+            height: 40px;
+
+        }
+    }
+}

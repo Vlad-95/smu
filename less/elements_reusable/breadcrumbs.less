@@ -24,4 +24,21 @@
             }
         }
     }
+
+    &_absolute {
+        position: absolute;
+        z-index: 2;
+    }
+
+    &_white {
+        color: @white;
+
+        .breadcrumbs__item {
+            &:not(:last-of-type) {                
+                &:after {
+                    background-color: @white;
+                }
+            }
+        }
+    }
 }
