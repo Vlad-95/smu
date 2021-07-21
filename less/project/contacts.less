@@ -1,0 +1,52 @@
+.contacts {
+    padding: 104px 0 291px;
+    max-width: 34%;
+    padding-right: 80px;
+
+    &__item {
+        color: @darkText;
+        padding-left: 40px;
+        position: relative;
+
+        &:not(:last-of-type) {
+            margin-bottom: 48px;
+        }
+
+        .icon {
+            position: absolute;
+            left: 2px;
+            top: -2px;
+        }
+
+        .label {
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .text {
+            p,
+            a {
+                margin: 0;
+                font-size: 15px;
+                line-height: 1.2;
+            }
+        }
+    }
+}
+
+.contacts-page {
+    position: relative;
+}
+
+.contacts-map {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 60%;
+    height: 100%;
+
+    .ymaps-2-1-78-ground-pane {
+        filter: grayscale(1);
+    }
+}
