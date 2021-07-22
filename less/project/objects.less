@@ -80,6 +80,40 @@
             display: none;
         }
     }
+
+    &__content {
+        display: none;
+        padding: 19px 40px 49px;
+
+        &__wrap {
+            display: flex;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            flex-direction: column;
+        }
+
+        .object-list__img {
+            width: 100%;
+    
+            img {
+                max-width: 100%;
+            }
+        }
+    
+        .object-list__link {
+            background-color: @violet;
+            color: @white;
+            z-index: 2;
+            font-family: @manrope;
+            font-size: 15px;
+            font-weight: 700;
+            border-radius: 20px;
+            padding: 13px 18px;
+            margin-top: 20px;
+        }
+    }
+
+    
 }
 
 .object-list-page {
@@ -108,7 +142,8 @@
     position: absolute;
     right: 0;
     top: 0;
-    width: 60%;
+    width: 61.5%;
+    max-width: 1100px;
     height: 100%;
 
     img {
@@ -246,5 +281,120 @@
 
     &__pag {
         background-color: @white;
+    }
+}
+
+@media screen and (max-width: 1600px) {
+    .object-list-image {
+        width: 62.5%;
+    }
+}
+
+@media screen and (max-width: 1500px) {
+    .object-list-image {
+        width: 63.5%;
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    .object-list-image {
+        width: 64.5%;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .object-list-image {
+        width: 65.5%;
+    }
+}
+
+@media screen and (max-width: 1200px) {    
+    .object-list-image {
+        width: calc(100% - 415px);
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .object-list {
+        max-width: none;
+        max-height: 100%;
+        padding-right: 0;
+
+        &__toggle {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 0 15px;
+
+            &.active {
+                .object-list__name {
+                    color: @violet;
+                }
+    
+                .object-list__arrow {
+                    transform: rotate(-90deg);
+                }
+            }
+        }
+
+        &__name {
+            color: @darkText;
+            position: relative;
+            font-weight: 600;
+            font-size: 15px;
+            padding-right: 20px;
+            margin: 0;
+            padding-left: 37px;
+
+            .count {
+                top: -2px;
+            }
+        }
+
+        &__arrow {
+            width: 30px;
+            height: 30px;
+            min-width: 30px;
+            min-height: 30px;
+            border-radius: 100px;
+            background-color: @violet;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: rotate(90deg);
+            transition: 0.3s;
+            opacity: 1;
+            position: static;
+            margin: 0;
+           
+
+            img {
+                display: none;
+            }
+
+            svg {
+                display: block;
+            }
+        }
+    }
+
+    .object-list-page {
+        .object-list-btn { 
+            display: none;
+        }
+    }
+
+    .object-list-image {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .object-list {
+        &__content {
+            .object-list__link {
+                font-size: 12px;
+            }
+        }
     }
 }

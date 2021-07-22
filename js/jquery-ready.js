@@ -152,44 +152,55 @@ $(document).ready(function() {
             
         })
 
-        //показ первого активного элемента и прикрепление ссылки        
-        let firstItemLink = $('.object-list__item:first-of-type').attr('data-link');
-        let firstItemImg = $('.object-list__item:first-of-type').attr('data-img');
-        let btnMore = $('.object-list-btn');
-        //таймаут для избежания постоянной подгрузки картинок
-        let timeout;
-        let wait = 500;
+        if ($(window).width() > 992) {
+            //показ первого активного элемента и прикрепление ссылки        
+            let firstItemLink = $('.object-list__item:first-of-type').attr('data-link');
+            let firstItemImg = $('.object-list__item:first-of-type').attr('data-img');
+            let btnMore = $('.object-list-btn');
+            //таймаут для избежания постоянной подгрузки картинок
+            let timeout;
+            let wait = 500;
 
-        $('.object-list__item:first-of-type').addClass('current');
-        $('.object-list-image img').attr('src', firstItemImg);
-        btnMore.attr('href', firstItemLink);
+            $('.object-list__item:first-of-type').addClass('current');
+            $('.object-list-image img').attr('src', firstItemImg);
+            btnMore.attr('href', firstItemLink);
 
-        //наведение на элементы списка
-        $('.object-list__item').hover(function() {     
-            clearTimeout(timeout);       
-            let itemLink = $(this).attr('data-link');
-            let itemImg = $(this).attr('data-img');
-            let imageBlock = $('.object-list-image');
+            //наведение на элементы списка
+            $('.object-list__item').hover(function() {     
+                clearTimeout(timeout);       
+                let itemLink = $(this).attr('data-link');
+                let itemImg = $(this).attr('data-img');
+                let imageBlock = $('.object-list-image');
 
-            $(this).siblings().removeClass('current');
-            $(this).addClass('current');
-            
-            btnMore.attr('href', itemLink);
+                $(this).siblings().removeClass('current');
+                $(this).addClass('current');
+                
+                btnMore.attr('href', itemLink);
 
-            imageBlock.find('img').fadeOut();
+                imageBlock.find('img').fadeOut();
 
-            let show = function() {
-                imageBlock.fadeIn();
-                imageBlock.find('img').attr('src', '');
-                imageBlock.find('img').attr('src', itemImg);
-                imageBlock.find('img').fadeIn();
-            }
+                let show = function() {
+                    imageBlock.fadeIn();
+                    imageBlock.find('img').attr('src', '');
+                    imageBlock.find('img').attr('src', itemImg);
+                    imageBlock.find('img').fadeIn();
+                }
 
-            timeout = setTimeout(show, wait)
-            
-        }, function() {
-            clearTimeout(timeout);
-        })
+                timeout = setTimeout(show, wait)
+                
+            }, function() {
+                clearTimeout(timeout);
+            })
+        } else {
+            // аккордион объектов
+            $('.object-list__toggle').click(function() {
+                $(this).toggleClass('active');
+                $(this).next().slideToggle();
+            })
+        }
+        
+
+        
     }
 
     //Объекты детальная
