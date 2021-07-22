@@ -65,3 +65,49 @@
         }
     }
 }
+
+@media screen and (max-width: 992px) {
+    .pagintaion {
+        padding: 50px 0;
+        
+        &__item {
+            font-size: 12px;
+
+            &.prev {
+                &:before {
+                    bottom: 0;
+                }
+            }
+
+            &.next {
+                &:before {
+                    bottom: 0;
+                }
+            }
+
+            &.back {
+                width: 100px;
+                height: 35px;
+                line-height: 7px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .pagintaion {
+        &__item {
+            &.prev {
+                font-size: 0;
+                padding-top: 5px;
+                padding-bottom: 5px;
+            }
+
+            &.next {
+                font-size: 0;
+                padding-top: 5px;
+                padding-bottom: 5px;
+            }
+        }
+    }
+}

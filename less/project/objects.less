@@ -312,6 +312,25 @@
     .object-list-image {
         width: calc(100% - 415px);
     }
+
+    .object-detail {
+   
+        &__img {
+            position: relative;
+            height: 400px;
+
+        }
+
+        &__title {
+            font-size: 50px;
+        }
+
+        .parameters {
+            &__list {
+                padding-left: 50px;
+            }
+        }
+    }
 }
 
 @media screen and (max-width: 992px) {
@@ -387,6 +406,84 @@
     .object-list-image {
         display: none;
     }
+
+    .object-detail {
+   
+        &__img {
+            position: relative;
+            height: 350px;
+
+        }
+
+        &__title {
+            font-size: 40px;
+        }
+
+        .parameters {
+            &__map {
+                height: 270px;
+            }
+            &__list {
+                padding-left: 50px;
+
+                &-item {
+                    .label {
+                        min-width: 250px;
+                    }
+                }
+            }
+        }
+
+        .about {
+            .wysiwyg {
+                ul,
+                ol,
+                p {
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .object-detail {
+   
+        &__img {
+            position: relative;
+            height: 300px;
+
+        }
+
+        &__title {
+            font-size: 35px;
+        }
+
+        .parameters {
+
+            &__wrap {
+                flex-wrap: wrap;
+                flex-direction: column;
+                align-items: flex-start;    
+            }
+
+            &__map {
+                height: 320px;
+                width: 100%;
+            }
+            &__list {
+                padding-left: 0;
+                width: 100%;
+                margin-top: 20px;
+
+                &-item {
+                    .label {
+                        min-width: 250px;
+                    }
+                }
+            }
+        }
+    }
 }
 
 @media screen and (max-width: 576px) {
@@ -394,6 +491,43 @@
         &__content {
             .object-list__link {
                 font-size: 12px;
+            }
+        }
+    }
+
+    .object-detail {
+   
+        &__img {
+            position: relative;
+            height: 300px;
+
+        }
+
+        &__title {
+            font-size: 30px;
+        }
+
+        .parameters {
+
+            &__list {
+
+                &-item {
+                    .label {
+                        min-width: 150px;
+                        max-width: 150px;
+                        white-space: pre-wrap;
+                    }
+
+                    .value {
+                        padding-left: 20px;
+                    }
+                }
+            }
+        }
+
+        .about {
+            &__title { 
+                font-size: 35px;
             }
         }
     }
