@@ -1,6 +1,6 @@
 $(document).ready(function() {
     //Глобальный слайдер на главной
-    if ($('mainslider').length) {
+    if ($('.mainslider').length) {
         const mainSlider = new Swiper('.mainslider', {
             // Optional parameters
             direction: 'vertical',
@@ -82,6 +82,14 @@ $(document).ready(function() {
         
         });
     }
+
+    //клик по бургеру
+    $('.burger').click(function () {
+        $('body').toggleClass('opacity-layer no-scroll');
+        $(this).toggleClass('active');
+        $('.header .logo').toggleClass('opacity');
+        $('.header__menu').toggle("slide", { direction: "right" }, 500);
+    })
 
     if ($('.about .wysiwyg').length) {
         //$('.about .wysiwyg').
