@@ -89,3 +89,97 @@
         }
     }
 }
+
+@media screen and (max-width: 1200px) {
+    .footer {
+        .logo {
+            max-width: 105px;
+        }
+
+        &__menu {
+            font-size: 14px;
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .footer {
+        .rights {
+            &__item {
+                &:nth-of-type(2) {
+                    margin-left: 30px;
+
+                    a:not(:last-of-type) {
+                        margin-right: 30px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .footer {
+        
+        .logo {
+            margin-right: 20px;
+        }
+
+        &__menu {
+            &-item {
+                &:not(:last-of-type) {
+                    margin-right: 20px;
+                }
+            }
+        }
+
+        &__contacts {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+
+            .phone, .address {
+                &:not(:last-of-type) {
+                    margin-right: 0;
+                    margin-bottom: 10px;
+                }
+            }
+        }
+
+        .rights {
+            flex-direction: column;
+
+            &__item {
+                &:not(:last-of-type) {
+                    margin-bottom: 20px;
+                }
+
+                &:nth-of-type(2) {
+                    margin-left: 0;
+                }
+
+                &.siluet {
+                    margin-left: 24px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .footer {
+        &__top {
+            flex-wrap: wrap;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .logo {
+            margin-bottom: 20px;
+        }
+
+        &__menu {
+            flex-wrap: wrap;
+        }
+    }
+}
