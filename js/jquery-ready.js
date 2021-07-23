@@ -64,7 +64,15 @@ $(document).ready(function() {
                 customPaging: function(slick,index) {
                     
                     return '<span>' + (index + 1) + '</span>';
-                }
+                },
+                responsive: [
+                    {
+                        breakpoint: 1200,
+                        settings: {
+                            dots: false
+                        }
+                    }
+                ]
             })
         
             if($(this).find('.slider__item').length <= 1) {

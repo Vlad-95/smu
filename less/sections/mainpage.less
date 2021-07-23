@@ -22,8 +22,7 @@
         overflow-y: auto;
         position: relative;
 
-        &-name {
-                      
+        &-name {                      
             position: absolute;
             top: 24vh;
             left: 0;
@@ -131,6 +130,22 @@
             }
         }
 
+        &_geography {
+            .slider {
+                &:before {
+                    content: '';
+                    background: linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.70196) 100%);
+                    position: absolute;
+                    left: 0px;
+                    top: 0px;
+                    width: 100%;
+                    height: 280px;
+                    z-index: 1;
+                    pointer-events: none;
+                }
+            }
+        }
+
         &_license {
             .slider {
                 &__item {
@@ -153,6 +168,7 @@
 
         &_last {
             .slider {
+                margin-bottom: -10px;
                 &__item {
                     padding-top: 35vh;
 
@@ -421,4 +437,988 @@
         }
     }
 }
+
+@media (max-width: 1200px) and (min-height: 300px) {
+    .mainslider {
+        &__item {
+            &-name {
+                top: 111px;
+
+                h2 {
+                    font-size: 20px;
+                    padding: 0 0 0 50px;
+
+                    .count {
+                        font-size: 12px;
+                        top: -6px;
+                    }
+                }
+            }
+
+            &_intro {
+                .slider {
+                    &__item {
+                        padding-top: 150px;
+
+                        &-wrap {
+                            max-width: 85%;
+                            padding-left: 48px;
+                        }
+
+                        &-name {
+                            font-size: 30px;
+                        }
+                    }
+                }
+            }
+
+            &_services {
+                .slider {
+                    &__item {
+                        padding-top: 150px;
+    
+                        &-wrap {
+                            max-width: 85%;
+                            padding-left: 48px;
+                        }
+    
+                        &-name {
+                            font-size: 30px;
+                        }
+                    }
+                }
+            }
+
+            &_objects {
+                .slider {
+                    &__item {
+                        padding-top: 150px;
+    
+                        &-wrap {
+                            max-width: 85%;
+                            padding-left: 48px;
+                        }
+    
+                        &-name {
+                            font-size: 30px;
+                        }
+                    }
+                }
+            }
+
+            &_geography {
+                .mainslider__item-name {
+                    h2 {
+                        .count {
+                            top: 4px;
+                        }
+                    }
+                }
+            }
+
+            &_license {
+                .slider {
+                    &__item {
+                        padding-top: 150px;
+    
+                        &-wrap {
+                            max-width: 85%;
+                            padding-left: 48px;
+                        }
+    
+                        &-name {
+                            font-size: 30px;
+                        }
+                    }
+                }
+            }
+
+            &_last {
+                .slider {
+                    &__item {
+                        padding-top: 140px;
+    
+                        &-wrap {
+                            max-width: 90%;
+                            padding-left: 48px;
+                        }
+                    }
+                }
+            }
+
+            .slider {
+
+                &__item {
+                    &-row {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                    }
+    
+                    &-text {
+                        width: 100%;
+                        p {
+                            font-size: 15px;
+                        }
+                    }
+    
+                    &-img {
+                        display: none;
+                    }
+                }
+
+                &__btn {
+                    bottom: 35px;
+
+                    .wrapper {
+                        padding-left: 64px;
+                    }
+
+                    .slider__link {
+                        font-size: 15px;
+                        padding: 7px 18px;
+                    }
+                }
+
+                .slick-dots {
+                    bottom: 80px;
+                    padding: 0 15px 0 51px;
+
+                    li {
+                        font-size: 12px;
+                        width: 30px;
+                        height: 30px;
+                        line-height: 30px;
+                    }
+                }
+
+                &__pag {
+                    bottom: 25px;
+
+                    &-wrap {
+                        max-width: 100px;
+                        margin: 0 0 0 auto;
+                    }
+
+                    
+                }
+            }
+        }
+
+        &__pag {     
+            display: none;
+    
+            .scroll-icon {
+                display: none;
+            }
+        }
+    }
+}
+
+@media (max-width: 1200px) and (min-height: 400px) {
+    .mainslider {
+        &__item {
+
+            &_intro {
+                .slider {
+                    &__item {
+                        padding-top: 165px;
+
+                        &-name {
+                            font-size: 45px;
+                        }
+                    }
+                }
+            }
+
+            &_services {
+                .slider {
+                    &__item {
+                        padding-top: 165px;
+    
+                        &-name {
+                            font-size: 45px;
+                        }
+                    }
+                }
+            }
+
+            &_objects {
+                .slider {
+                    &__item {
+                        padding-top: 165px;
+    
+                        &-name {
+                            font-size: 45px;
+                        }
+                    }
+                }
+            }
+
+            &_license {
+                .slider {
+                    &__item {
+                        padding-top: 165px;
+    
+                        &-name {
+                            font-size: 45px;
+                        }
+                    }
+                }
+            }
+
+            &_last {
+                .slider {
+                    &__item {
+                        padding-top: 140px;
+                    }
+                }
+            }
+
+            
+        }
+
+        &__pag {     
+            display: block;
+
+            .swiper-pagination {
+    
+                &-bullet {                    
+                    width: 25px;
+                    height: 25px;                    
+                    font-size: 10px;                    
+                    line-height: 26px;
+
+                    &:not(:last-of-type) {
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+    
+            .scroll-icon {
+                display: none;
+            }
+        }
+        
+    }
+}
+
+@media (max-width: 1200px) and (min-height: 500px) {
+    .mainslider {
+        &__item {
+            &-name {
+
+                h2 {
+                    font-size: 24px;            
+
+                    .count {
+                        top: -3px;
+                    }
+                }
+            }
+
+            &_intro {
+                .slider {
+                    &__item {
+                        padding-top: 165px;
+
+                        &-name {
+                            font-size: 50px;
+                        }
+                    }
+                }
+            }
+
+            &_services {
+                .slider {
+                    &__item {
+                        padding-top: 165px;
+    
+                        &-name {
+                            font-size: 50px;
+                        }
+                    }
+                }
+            }
+
+            &_objects {
+                .slider {
+                    &__item {
+                        padding-top: 165px;
+    
+                        &-name {
+                            font-size: 50px;
+                        }
+                    }
+                }
+            }
+
+            &_geography {
+                .mainslider__item-name {
+                    h2 {
+                        .count {
+                            top: 6px;
+                        }
+                    }
+                }
+            }
+
+            &_license {
+                .slider {
+                    &__item {
+                        padding-top: 165px;
+    
+                        &-name {
+                            font-size: 50px;
+                        }
+                    }
+                }
+            }
+
+            .slider {
+                &__item {
+                    &-row {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                    }
+    
+                    &-text {
+                        width: 70%;
+                        p {
+                            font-size: 15px;
+                        }
+                    }
+    
+                    &-img {
+                        width: 20%;
+                        display: block;
+                    }
+                }
+            }
+        }
+
+        &__pag {     
+            .swiper-pagination {
+    
+                &-bullet {                    
+                    width: 30px;
+                    height: 30px;                    
+                    font-size: 12px;                    
+                    line-height: 32px;
+
+                    &:not(:last-of-type) {
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+        } 
+        
+    }
+}
+
+@media (max-width: 992px) and (min-height: 300px) {
+    .mainslider {
+        &__item {
+
+            &-name {   
+                h2 {
+                    &.mainslider__item-title_fill {
+                        padding: 10px 16px 10px 60px;
+                    }
+                }
+            }
+
+            &_intro {
+                .slider {
+                    &__item {
+
+                        &-name {
+                            font-size: 40px;
+                        }
+                    }
+                }
+            }
+
+            &_services {
+                .slider {
+                    &__item {
+    
+                        &-name {
+                            font-size: 40px;
+                        }
+                    }
+                }
+            }
+
+            &_objects {
+                .slider {
+                    &__item {
+    
+                        &-name {
+                            font-size: 40px;
+                        }
+                    }
+                }
+            }
+
+            &_license {
+                .slider {
+                    &__item {
+    
+                        &-name {
+                            font-size: 35px;
+                        }
+                    }
+                }
+            }
+
+            &_last {
+                .slider {
+                    &__item {
+
+                        &-wrap {
+                            max-width: 90%;
+                        }
+
+                    }
+                }
+            }
+
+            .slider {
+
+                &__item {
+
+                    &-text {
+                       
+                        p {
+                            font-size: 12px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 992px) and (min-height: 400px) {
+    .mainslider {
+        &__item {
+
+            &_intro {
+                .slider {
+                    &__item {
+
+                        &-name {
+                            font-size: 45px;
+                        }
+                    }
+                }
+            }
+
+            &_services {
+                .slider {
+                    &__item {
+    
+                        &-name {
+                            font-size: 45px;
+                        }
+                    }
+                }
+            }
+
+            &_objects {
+                .slider {
+                    &__item {
+    
+                        &-name {
+                            font-size: 45px;
+                        }
+                    }
+                }
+            }
+
+            &_license {
+                .slider {
+                    &__item {
+    
+                        &-name {
+                            font-size: 45px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 992px) and (min-height: 500px) {
+    .mainslider {
+        &__item {
+
+            &_intro {
+                .slider {
+                    &__item {
+
+                        &-name {
+                            font-size: 50px;
+                        }
+                    }
+                }
+            }
+
+            &_services {
+                .slider {
+                    &__item {
+    
+                        &-name {
+                            font-size: 50px;
+                        }
+                    }
+                }
+            }
+
+            &_objects {
+                .slider {
+                    &__item {
+    
+                        &-name {
+                            font-size: 50px;
+                        }
+                    }
+                }
+            }
+
+            &_license {
+                .slider {
+                    &__item {
+    
+                        &-name {
+                            font-size: 50px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
   
+@media (max-width: 768px) and (min-height: 300px) {
+    .mainslider {
+        &__item {
+            &-name {
+                top: 92px;
+            }
+
+            &_intro {
+                .slider {
+                    &__item {
+
+                        &-name {
+                            font-size: 40px;
+                        }
+                    }
+                }
+            }
+
+            &_services {
+                .slider {
+                    &__item {
+    
+                        &-name {
+                            font-size: 30px;
+                        }
+                    }
+                }
+            }
+
+            &_objects {
+                .slider {
+                    &__item {
+    
+                        &-name {
+                            font-size: 30px;
+                        }
+                    }
+                }
+            }
+
+            &_license {
+                .slider {
+                    &__item {
+    
+                        &-name {
+                            font-size: 30px;
+                        }
+                    }
+                }
+            }
+
+            &_last {
+                .slider {
+                    &__item {
+                        padding-top: 115px;
+                    }
+                }
+            }
+            
+        }   
+    }
+}
+
+@media (max-width: 768px) and (min-height: 400px) {
+    .mainslider {
+        &__item {
+            &-name {
+                top: 92px;
+            }
+
+            &_intro {
+                .slider {
+                    &__item {
+
+                        &-name {
+                            font-size: 45px;
+                        }
+                    }
+                }
+            }
+
+            &_services {
+                .slider {
+                    &__item {
+    
+                        &-name {
+                            font-size: 40px;
+                        }
+                    }
+                }
+            }
+
+            &_objects {
+                .slider {
+                    &__item {
+    
+                        &-name {
+                            font-size: 40px;
+                        }
+                    }
+                }
+            }
+
+            &_license {
+                .slider {
+                    &__item {
+    
+                        &-name {
+                            font-size: 40px;
+                        }
+                    }
+                }
+            }
+            
+        }   
+    }
+}
+
+@media (max-width: 768px) and (min-height: 500px) {
+    .mainslider {
+        &__item {
+            &-name {
+                top: 92px;
+            }
+
+            &_intro {
+                .slider {
+                    &__item {
+
+                        &-name {
+                            font-size: 50px;
+                        }
+                    }
+                }
+            }
+
+            &_services {
+                .slider {
+                    &__item {
+    
+                        &-name {
+                            font-size: 45px;
+                        }
+                    }
+                }
+            }
+
+            &_objects {
+                .slider {
+                    &__item {
+    
+                        &-name {
+                            font-size: 45px;
+                        }
+                    }
+                }
+            }
+
+            &_license {
+                .slider {
+                    &__item {
+    
+                        &-name {
+                            font-size: 45px;
+                        }
+                    }
+                }
+            }
+            
+        }   
+    }
+}
+
+@media (max-width: 576px) and (min-height: 300px) {
+    .mainslider {
+        &__item {
+
+            &_intro {
+                .slider {
+                    &__item {
+
+                        &-wrap {
+                            padding-left: 0;
+                        }
+
+                        &-name {
+                            font-size: 28px;
+                        }
+                    }
+                }
+            }
+
+            &_services {
+                .slider {
+                    &__item {
+
+                        &-wrap {
+                            padding-left: 0;
+                        }
+    
+                        &-name {
+                            font-size: 28px;
+                        }
+                    }
+                }
+            }
+
+            &_objects {
+                .slider {
+                    &__item {
+
+                        &-wrap {
+                            padding-left: 0;
+                        }
+    
+                        &-name {
+                            font-size: 28px;
+                        }
+                    }
+                }
+            }
+
+            &_license {
+                .slider {
+                    &__item {
+    
+                        &-wrap {
+                            padding-left: 0;
+                        }
+    
+                        &-name {
+                            font-size: 28px;
+                        }
+                    }
+                }
+            }
+
+            &_last {
+                .slider {
+                    &__item {
+                        padding-top: 130px;
+
+                        &-wrap {
+                            padding-left: 0;
+                        }
+                    }
+                }
+            }
+
+            .slider {
+
+                &__item {   
+                    &-text {
+                        width: 100%;
+                    } 
+
+                    &-img {
+                        display: none;
+                    }
+                }
+
+                &__btn {
+                    bottom: 35px;
+
+                    .wrapper {
+                        padding-left: 15px;
+                    }
+                }
+
+                &__pag {
+
+                    &-wrap {
+                        max-width: 70px;
+                        margin: 0 0 0 auto;
+                    }                
+                    
+                    .button-prev {
+                        top: 1px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 576px) and (min-height: 400px) {
+    .mainslider {
+        &__item {
+
+            &_intro {
+                .slider {
+                    &__item {
+
+                        &-wrap {
+                            padding-left: 0;
+                        }
+
+                        &-name {
+                            font-size: 35px;
+                        }
+                    }
+                }
+            }
+
+            &_services {
+                .slider {
+                    &__item {
+
+                        &-wrap {
+                            padding-left: 0;
+                        }
+    
+                        &-name {
+                            font-size: 30px;
+                        }
+                    }
+                }
+            }
+
+            &_objects {
+                .slider {
+                    &__item {
+
+                        &-wrap {
+                            padding-left: 0;
+                        }
+    
+                        &-name {
+                            font-size: 30px;
+                        }
+                    }
+                }
+            }
+
+            &_license {
+                .slider {
+                    &__item {
+    
+                        &-wrap {
+                            padding-left: 0;
+                        }
+    
+                        &-name {
+                            font-size: 30px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) and (min-height: 500px) {
+    .mainslider {
+        &__item {
+
+            &_intro {
+                .slider {
+                    &__item {
+
+                        &-wrap {
+                            padding-left: 0;
+                        }
+
+                        &-name {
+                            font-size: 45px;
+                        }
+                    }
+                }
+            }
+
+            &_services {
+                .slider {
+                    &__item {
+
+                        &-wrap {
+                            padding-left: 0;
+                        }
+    
+                        &-name {
+                            font-size: 30px;
+                        }
+                    }
+                }
+            }
+
+            &_objects {
+                .slider {
+                    &__item {
+
+                        &-wrap {
+                            padding-left: 0;
+                        }
+    
+                        &-name {
+                            font-size: 30px;
+                        }
+                    }
+                }
+            }
+
+            &_license {
+                .slider {
+                    &__item {
+    
+                        &-wrap {
+                            padding-left: 0;
+                        }
+    
+                        &-name {
+                            font-size: 30px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
