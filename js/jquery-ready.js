@@ -80,6 +80,8 @@ $(document).ready(function() {
                 $(this).find('.slick-dots').hide();
                 $(this).find('.slider__pag').hide();
             } else {
+                console.log($(this).find('.slick-dots li').width())
+                
                 $(this).siblings('.slider__pag').find('.button-prev').click(function() {
                     $(this).closest('.slider').find('.slider__wrapper').slick('slickPrev');
                 })
@@ -210,7 +212,7 @@ $(document).ready(function() {
 
                 imageBlock.find('img').fadeOut();
 
-                let show = function() {
+                let show = function() {                    
                     imageBlock.fadeIn();
                     imageBlock.find('img').attr('src', '');
                     imageBlock.find('img').attr('src', itemImg);
@@ -219,8 +221,9 @@ $(document).ready(function() {
 
                 timeout = setTimeout(show, wait);
                 
+                
             }, function() {                
-                clearTimeout(timeout);  
+                //clearTimeout(timeout);  
                 
             })
         } else {
