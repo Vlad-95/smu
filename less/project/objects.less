@@ -2,7 +2,7 @@
     margin-top: 36px;
     max-width: 400px;
     padding-right: 40px;
-    max-height: calc(100vh - 474px);
+    max-height: calc(100vh - 464px);
     min-height: 444px;
     overflow: auto;
     padding-bottom: 36px;
@@ -169,6 +169,19 @@
             left: 0;
             top: 0;
             pointer-events: none;
+        }
+
+        &:before {
+            content: '';
+            background: url("../img/pattern-dots.png");
+            background-size: cover;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            pointer-events: none;
+            z-index: 2;
         }
         
           
@@ -377,6 +390,8 @@
             height: 30px;
             min-width: 30px;
             min-height: 30px;
+            max-width: 30px;
+            max-height: 30px;
             border-radius: 100px;
             background-color: @violet;
             display: flex;

@@ -144,6 +144,24 @@
                     pointer-events: none;
                 }
             }
+
+            .map {
+                width: 100%;
+                height: 100%;
+                cursor: default;
+
+                .ymaps-2-1-78-ground-pane {
+                    filter: grayscale(1);
+                }
+            }
+
+            .slider__link {
+                &:hover {
+                    color: @violet!important;
+                    border-color: @violet!important;
+
+                }
+            }
         }
 
         &_license {
@@ -221,13 +239,17 @@
 
                 &-img {
                     width: 42%;
+
+                    img {
+                        max-width: 35vh;
+                    }
                 }
             }
 
             &__btn {
                 position: absolute;
                 left: 0;
-                bottom: 10vh;
+                bottom: 10.1vh;
                 width: 100%;
                 z-index: 2;
 
@@ -245,10 +267,21 @@
                     border: 1px solid rgba(255,255,255,0.2);
                     border-radius: 100px;
                     padding: 10px 23px;    
+                    transition: 0.3s;
+
+                    &:hover {
+                        background-color: @violet;
+                        border-color: @violet;
+                    }
                     
                     &_violet {
                         background-color: @violet;
                         border-color: @violet;
+
+                        &:hover {
+                            border: 1px solid rgba(255,255,255,0.2);
+                            background-color: inherit;
+                        }
                     }
                 }
             }
@@ -262,7 +295,7 @@
                 width: 100%;
                 max-width: 1680px;
                 margin: 0 auto;
-                padding: 0 15px 0 82px;
+                padding: 0 15px 0 128px;
                 list-style: none;
                 text-align: left;
                 z-index: 11;
@@ -317,6 +350,15 @@
                     max-width: 450px;
                     height: 38px;
                     position: relative;
+                }
+
+                .count {
+                    position: absolute;
+                    font-family: @manrope;
+                    font-weight: 700;
+                    font-size: 15px;
+                    top: 11px;
+                    left: 63px;
                 }
 
                 .button-prev {
@@ -671,6 +713,14 @@
                 .slider {
                     &__item {
                         padding-top: 140px;
+                    }
+                }
+            }
+
+            .slider {
+                &__pag {
+                    .count {
+                        display: none;
                     }
                 }
             }
@@ -1046,6 +1096,7 @@
             &_license {
                 .slider {
                     &__item {
+                        background-image: url("../img/bg5-mobile.png")!important;
     
                         &-name {
                             font-size: 30px;

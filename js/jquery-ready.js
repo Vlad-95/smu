@@ -32,12 +32,13 @@ $(document).ready(function() {
                 var scrollDifferenceTop = scrollHeight - slideSize;
         
                 acs.addEventListener('wheel', findScrollDirectionOtherBrowsers);
+                acs.addEventListener('touchstart', findScrollDirectionOtherBrowsers);
         
                 function findScrollDirectionOtherBrowsers(event) {
                     var scrollDifference = scrollHeight - slideSize - acs.scrollTop;
         
-                                    // Scroll wheel browser compatibility
-                                    var delta = event.wheelDelta || -1 * event.deltaY;
+                    // Scroll wheel browser compatibility
+                    var delta = event.wheelDelta || -1 * event.deltaY;
                     
                     // Enable scrolling if at edges
                     var spos = delta < 0 ? 0 : scrollDifferenceTop;
@@ -80,7 +81,6 @@ $(document).ready(function() {
                 $(this).find('.slider__pag').hide();
             } else {
                 $(this).siblings('.slider__pag').find('.button-prev').click(function() {
-                    console.log($(this))
                     $(this).closest('.slider').find('.slider__wrapper').slick('slickPrev');
                 })
                 $(this).siblings('.slider__pag').find('.button-next').click(function() {
@@ -89,6 +89,29 @@ $(document).ready(function() {
             }
         
         });
+    }
+
+    //карта на слайде География
+    if($('.mainslider').length) {
+        ymaps.ready(init);
+        function init(){
+            // Создание карты.
+            var myMap = new ymaps.Map("map", {
+                center: [59.971668064132984,30.490338999999977],
+                controls: [],                
+                zoom: 7
+            });
+
+            var myPlacemark = new ymaps.Placemark([59.971668064132984,30.490338999999977], {}, {
+                iconLayout: 'default#image',
+                iconImageHref: 'img/icons/pin.png',
+                iconImageSize: [55, 56],
+                iconImageOffset: [-28, -45]
+            });
+
+            myMap.geoObjects.add(myPlacemark);
+            myMap.behaviors.disable('scrollZoom');
+        }
     }
 
     //клик по бургеру
@@ -151,7 +174,7 @@ $(document).ready(function() {
         //простановка нумерации
         $('.object-list__item').each(function(index) {
             let itemNumber = index + 1;
-            console.log(itemNumber);
+            
             if(itemNumber < 10) {
                 $(this).find('.count').text("0" + itemNumber);
             } else {
@@ -194,10 +217,11 @@ $(document).ready(function() {
                     imageBlock.find('img').fadeIn();
                 }
 
-                timeout = setTimeout(show, wait)
+                timeout = setTimeout(show, wait);
                 
-            }, function() {
-                clearTimeout(timeout);
+            }, function() {                
+                clearTimeout(timeout);  
+                
             })
         } else {
             // аккордион объектов
