@@ -59,6 +59,7 @@ $(document).ready(function() {
                 autoplaySpeed: 6000,
                 arrows: false,
                 dots:true,
+                appendDots: $(this).siblings('.slider__pag').find('.slider__pag-wrap .dots'),
                 pauseOnHover: false,
                 pauseOnFocus: false,
                 fade: true,
@@ -79,9 +80,7 @@ $(document).ready(function() {
             if($(this).find('.slider__item').length <= 1) {
                 $(this).find('.slick-dots').hide();
                 $(this).find('.slider__pag').hide();
-            } else {
-                console.log($(this).find('.slick-dots li').width())
-                
+            } else {                
                 $(this).siblings('.slider__pag').find('.button-prev').click(function() {
                     $(this).closest('.slider').find('.slider__wrapper').slick('slickPrev');
                 })
