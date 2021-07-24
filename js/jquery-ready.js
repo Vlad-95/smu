@@ -1,4 +1,8 @@
 $(document).ready(function() {
+    //проблема 100vh На мобиле
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+    
     //Глобальный слайдер на главной
     if ($('.mainslider').length) {
         const mainSlider = new Swiper('.mainslider', {
@@ -21,33 +25,43 @@ $(document).ready(function() {
             
         });
 
-        mainSlider.on('slideChangeTransitionEnd', function () {
-            var acs = document.querySelectorAll('.swiper-slide-active')[0];
+        mainSlider.on('slideChangeTransitionEnd', function (swiper) {
+            
+            var acs = $('.swiper-slide-active')[0];
             var hasVerticalScrollbar = acs.scrollHeight > acs.clientHeight;
             console.log(hasVerticalScrollbar);
                     
             if (hasVerticalScrollbar) {
+                mainSlider.mousewheel.disable();
+                mainSlider.allowTouchMove = false
                 var scrollHeight = acs.scrollHeight;
                 var slideSize = acs.swiperSlideSize;
                 var scrollDifferenceTop = scrollHeight - slideSize;
         
-                acs.addEventListener('wheel', findScrollDirectionOtherBrowsers);
-                acs.addEventListener('touchstart', findScrollDirectionOtherBrowsers);
+                //acs.addEventListener('wheel', findScrollDirectionOtherBrowsers);
+                acs.addEventListener('scroll', findScrollDirectionOtherBrowsers);
+
+                $('body').bind('touchmove', findScrollDirectionOtherBrowsers)
         
                 function findScrollDirectionOtherBrowsers(event) {
-                    var scrollDifference = scrollHeight - slideSize - acs.scrollTop;
-        
-                    // Scroll wheel browser compatibility
-                    var delta = event.wheelDelta || -1 * event.deltaY;
                     
-                    // Enable scrolling if at edges
-                    var spos = delta < 0 ? 0 : scrollDifferenceTop;
+                    var scrollDifference = scrollHeight - slideSize - acs.scrollTop;                    
+                    var spos = scrollDifferenceTop;
+
                     
-                    if (!(scrollDifference == spos))
-                        mainSlider.mousewheel.disable();
-                    else
+                    if (scrollDifference == spos) {
                         mainSlider.mousewheel.enable();
+                        mainSlider.allowTouchMove = true                        
+                    }                        
+                    else {
+                        mainSlider.mousewheel.disable();
+                        mainSlider.allowTouchMove = false                        
+                    }
+                        
                 }
+            } else {
+                mainSlider.mousewheel.enable();
+                mainSlider.allowTouchMove = true
             }
         });
     }
@@ -112,6 +126,7 @@ $(document).ready(function() {
 
             myMap.geoObjects.add(myPlacemark);
             myMap.behaviors.disable('scrollZoom');
+            myMap.behaviors.disable('drag');
         }
     }
 

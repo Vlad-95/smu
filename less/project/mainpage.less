@@ -2,6 +2,10 @@
     position: relative;
     overflow: hidden;
 
+    .header {
+        padding-right: 15px;
+    }
+
     // &:after {
     //     background: linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.70196) 100%);
     //     position: absolute;
@@ -17,6 +21,7 @@
 
 .mainslider {
     height: 100vh!important;
+    height: calc(var(--vh, 1vh) * 100)!important;
 
     &__item {
         overflow-y: auto;
@@ -212,6 +217,7 @@
             }
             &__item {
                 height: 100vh!important;
+                height: calc(var(--vh, 1vh) * 100)!important;
                 background-size: cover;
                 background-position: center center;
                 background-repeat: no-repeat;
@@ -423,7 +429,7 @@
         }
 
         .swiper-pagination {
-            right: 15px;
+            right: 30px;
             top: 0;
             height: 100vh;
             display: flex;
@@ -458,7 +464,7 @@
             width: 24px;
             height: 44px;
             position: absolute;
-            right: 22px;
+            right: 37px;
             bottom: 10vh;
             z-index: 2;
         }
@@ -466,7 +472,13 @@
 }
 
 @media (max-width: 1200px) and (min-height: 300px) {
+    .mainpage {
+        .header {
+            padding-right: 0;
+        }
+    }
     .mainslider {
+
         &__item {
             &-name {
                 top: 111px;
@@ -641,6 +653,10 @@
 
         &__pag {     
             display: none;
+
+            .swiper-pagination {
+                right: 15px;
+            }
     
             .scroll-icon {
                 display: none;
