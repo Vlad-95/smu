@@ -286,55 +286,7 @@
                 }
             }
 
-            .slick-dots {
-                display: block;
-                position: absolute;
-                bottom: 22vh;
-                left: 0;
-                right: 0;
-                width: 100%;
-                max-width: 1680px;
-                margin: 0 auto;
-                padding: 0 15px 0 128px;
-                list-style: none;
-                text-align: left;
-                z-index: 11;
-
-                li {
-                    font-size: 15px;
-                    font-family: @manrope;
-                    font-weight: 700;
-                    width: 38px;
-                    height: 38px;
-                    line-height: 38px;
-                    background: none;
-                    opacity: 1;
-                    margin: 0 13px;
-                    position: relative;
-                    transition: 0.3s;
-                    border: 1px solid rgba(255,255,255,0);
-                    border-radius: 100px;
-                    text-align: center;
-                    
-                    &:not(:last-of-type) {
-                        &:after {
-                            content: '.';
-                            position: absolute;
-                            font-size: 15px;
-                            font-family: @manrope;
-                            font-weight: 700;
-                            width: 6px;
-                            left: calc(100% + 10px);
-                        }
-                    }
-                    
-
-                    &.slick-active {
-                        border: 1px solid rgba(255,255,255,0.2);
-                    }
-                }
-                
-            }
+            
 
             &__pag {
                 position: absolute;
@@ -342,35 +294,73 @@
                 right: 0;
                 bottom: 22vh;                
 
-                .wrapper {
-                   
-                }
-
                 &-wrap {
-                    max-width: 450px;
+                    align-items: center;
+                    padding-left: 21px;
                     height: 38px;
                     position: relative;
+                    display: flex;
                 }
 
                 .count {
-                    position: absolute;
                     font-family: @manrope;
                     font-weight: 700;
                     font-size: 15px;
-                    top: 11px;
-                    left: 63px;
+                    margin: 0 0 0 36px;
+                }
+
+                .dots {
+                    margin: 0 3px 0 22px;
+                }
+
+                .slick-dots {
+                    position: static;
+                    list-style: none;
+                    text-align: left;
+                    z-index: 11;
+    
+                    li {
+                        font-size: 15px;
+                        font-family: @manrope;
+                        font-weight: 700;
+                        width: 38px;
+                        height: 38px;
+                        line-height: 38px;
+                        background: none;
+                        opacity: 1;
+                        margin: 0 12px;
+                        position: relative;
+                        transition: 0.3s;
+                        border: 1px solid rgba(255,255,255,0);
+                        border-radius: 100px;
+                        text-align: center;
+                        
+                        &:not(:last-of-type) {
+                            &:after {
+                                content: '.';
+                                position: absolute;
+                                font-size: 15px;
+                                font-family: @manrope;
+                                font-weight: 700;
+                                width: 6px;
+                                left: calc(100% + 10px);
+                            }
+                        }
+                        
+    
+                        &.slick-active {
+                            border: 1px solid rgba(255,255,255,0.2);
+                        }
+                    }
+                    
                 }
 
                 .button-prev {
                     width: 26px;
-                    height: 38px;
-                    left: 100px;
-                    z-index: 10;
-                    position: absolute;  
-                    left: 0;      
-                    top: 0;       
+                    height: 38px;                                         
                     cursor: pointer;     
                     z-index: 12;
+                    transform: translateY(1px);
 
                     &:before {
                         content: '';
@@ -390,12 +380,7 @@
 
                 .button-next {
                     width: 26px;
-                    height: 38px;
-                    right: 100px;
-                    z-index: 10;
-                    position: absolute;
-                    right: 0;
-                    top: 0;     
+                    height: 38px;  
                     cursor: pointer;         
                     z-index: 12;       
     
@@ -622,27 +607,34 @@
                     }
                 }
 
-                .slick-dots {
-                    bottom: 80px;
-                    padding: 0 15px 0 51px;
-
-                    li {
-                        font-size: 12px;
-                        width: 30px;
-                        height: 30px;
-                        line-height: 30px;
-                    }
-                }
+                
 
                 &__pag {
                     bottom: 25px;
 
                     &-wrap {
-                        max-width: 100px;
+                        padding: 0;
                         margin: 0 0 0 auto;
+                        width: 80px;
+                        justify-content: space-between;
                     }
 
-                    
+                    .count {
+                        display: none;
+                    }
+
+                    .dots {
+                        margin: 0;
+                    }
+
+                    .slick-dots {    
+                        li {
+                            font-size: 12px;
+                            width: 30px;
+                            height: 30px;
+                            line-height: 30px;
+                        }
+                    }
                 }
             }
         }
@@ -1323,17 +1315,7 @@
                     }
                 }
 
-                &__pag {
-
-                    &-wrap {
-                        max-width: 70px;
-                        margin: 0 0 0 auto;
-                    }                
-                    
-                    .button-prev {
-                        top: 1px;
-                    }
-                }
+                
             }
         }
     }
