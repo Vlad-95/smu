@@ -216,11 +216,41 @@
                 margin-bottom: 0!important;
             }
             &__item {
+                background-image: url("../img/bg-default.png");
                 height: 100vh!important;
-                height: calc(var(--vh, 1vh) * 100)!important;
                 background-size: cover;
                 background-position: center center;
                 background-repeat: no-repeat;
+                position: relative;
+
+                &-img {
+                    position: absolute;
+                    width: 55%;
+                    height: calc(100vh - 100px);
+                    max-height: 640px;
+                    top: 0;
+                    bottom: 0;
+                    right: 0;
+                    margin: auto;
+                    
+                    &.full {
+                        left: 0;
+                        top: 0;
+                        width: 100%;
+                        height: 100%;
+                    }
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+
+                &-wrap {
+                    position: relative;
+                    z-index: 3;
+                }
 
                 &-name {
                     margin: 0;
@@ -243,13 +273,6 @@
                     }
                 }
 
-                &-img {
-                    width: 42%;
-
-                    img {
-                        max-width: 35vh;
-                    }
-                }
             }
 
             &__btn {
@@ -603,6 +626,10 @@
     
                     &-img {
                         display: none;
+
+                        &.full {
+                            display: block;
+                        }
                     }
                 }
 
@@ -835,6 +862,13 @@
 
             .slider {
                 &__item {
+
+                    &-img {
+                        display: block;
+                        width: 50%;
+                        height: calc(100vh - 150px);
+                    }
+
                     &-row {
                         display: flex;
                         align-items: center;
@@ -848,10 +882,7 @@
                         }
                     }
     
-                    &-img {
-                        width: 20%;
-                        display: block;
-                    }
+                    
                 }
             }
         }
@@ -946,6 +977,14 @@
             .slider {
 
                 &__item {
+
+                    &-img {
+                        display: none;
+
+                        &.full {
+                            display: block;
+                        }
+                    }
 
                     &-text {
                        
@@ -1055,6 +1094,16 @@
                             font-size: 50px;
                         }
                     }
+                }
+            }
+        }
+
+        .slider {
+            &__item {
+                &-img {
+                    display: block;
+                    width: 50%;
+                    height: calc(100vh - 150px);
                 }
             }
         }

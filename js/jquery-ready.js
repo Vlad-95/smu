@@ -69,7 +69,7 @@ $(document).ready(function() {
     if ($('.slider').length) {
         $('.slider .slider__wrapper').each(function () {
             $(this).slick({
-                autoplay: true,
+                autoplay: false,
                 autoplaySpeed: 6000,
                 arrows: false,
                 dots:true,
