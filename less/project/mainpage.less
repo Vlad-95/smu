@@ -155,7 +155,7 @@
                 height: 100%;
                 cursor: default;
 
-                .ymaps-2-1-78-ground-pane {
+                .ymaps-2-1-79-ground-pane {
                     filter: grayscale(1);
                 }
             }
@@ -238,6 +238,7 @@
                         top: 0;
                         width: 100%;
                         height: 100%;
+                        max-height: none;
                     }
 
                     img {
@@ -270,6 +271,14 @@
                         line-height: 1.5;
                         font-family: @ibm;
                         font-weight: 400;
+                    }
+                }
+
+                &-logo {
+                    width: 42%;
+
+                    img {
+                        max-width: 35vh;
                     }
                 }
 
@@ -452,8 +461,9 @@
         }
 
         .swiper-pagination {
-            right: 30px;
-            top: 0;
+            right: 30px!important;
+            top: 0!important;
+            transform: translate3d(0,0,0)!important;
             height: 100vh;
             display: flex;
             flex-direction: column;
@@ -631,6 +641,10 @@
                             display: block;
                         }
                     }
+
+                    &-logo {
+                        display: none;
+                    }
                 }
 
                 &__btn {
@@ -682,7 +696,7 @@
             display: none;
 
             .swiper-pagination {
-                right: 15px;
+                right: 15px!important;
             }
     
             .scroll-icon {
@@ -880,6 +894,11 @@
                         p {
                             font-size: 15px;
                         }
+                    }
+
+                    &-logo {
+                        width: 20%;
+                        display: block;
                     }
     
                     
@@ -1102,7 +1121,7 @@
             &__item {
                 &-img {
                     display: block;
-                    width: 50%;
+                    width: 65%;
                     height: calc(100vh - 150px);
                 }
             }
@@ -1171,6 +1190,12 @@
             }
             
         }   
+
+        &__item {
+            &-img {
+                display: none;
+            }
+        }
     }
 }
 
@@ -1370,6 +1395,10 @@
                     &-img {
                         display: none;
                     }
+
+                    &-logo {
+                        display: none;
+                    }
                 }
 
                 &__btn {
@@ -1381,6 +1410,15 @@
                 }
 
                 
+            }
+        }
+
+        &__item {
+            &-img {
+                display: block;
+                width: 100%;
+                height: 100%;
+                max-height: none;
             }
         }
     }
